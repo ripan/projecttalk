@@ -4,4 +4,6 @@ class Project < ApplicationRecord
   validates :title, :body, :status, presence: true
   validates :title, uniqueness: true
   validates :status, inclusion: { in: Project.statuses.keys, message: "%{value} is not a valid status" }
+
+  has_many :comments, dependent: :destroy
 end

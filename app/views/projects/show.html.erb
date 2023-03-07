@@ -8,3 +8,8 @@
 
   <%= button_to "Destroy this project", @project, method: :delete %>
 </div>
+
+<hr />
+<%= render "comments/form"%>
+<hr />
+<%= render @project.comments %>
